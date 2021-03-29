@@ -140,11 +140,14 @@ var OpenClose = /*#__PURE__*/function () {
           }
         });
         var closeBtn = currentEl.querySelector(_this3.closeBtn);
-        closeBtn.addEventListener('click', function (e) {
-          e.preventDefault();
 
-          _this3.removeClass(currentEl);
-        });
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            _this3.removeClass(currentEl);
+          });
+        }
 
         if (_this3.hideOnClickOutside) {
           //hide drop on click outside
