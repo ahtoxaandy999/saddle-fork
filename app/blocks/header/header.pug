@@ -17,7 +17,28 @@ header.header.js-mobile-nav
                         a(href="#").js-tab-link Withdraw
                     li
                         a(href="#").js-tab-link Risk
-            a.btn.btn-secondary Connect Wallet
+            .connect-holder.js-open-close
+                a.btn.btn-secondary.js-opener
+                    span.gradient-text Connect Wallet
+                .connect-holder__drop
+                    h2 Connect Wallet
+                    ul.connect-holder__list 
+                        li
+                            a(href="#")
+                                span MetaMask
+                                img(src="images/logo-1.png", alt="")
+                        li
+                            a(href="#")
+                                span Wallet Connect
+                                img(src="images/logo-2.png", alt="")
+                        li
+                            a(href="#")
+                                span Coinbase Wallet
+                                img(src="images/logo-3.png", alt="")
+                    p.description Don’t have a wallet? <a href="#">Get a wallet!</a>
+                    a(href="#").js-close 
+                        img(src="images/icons/icon-close.svg", alt="") 
+
     
 
 

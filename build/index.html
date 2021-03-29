@@ -22,7 +22,18 @@
                 <li><a class="js-tab-link" href="#">Withdraw</a></li>
                 <li><a class="js-tab-link" href="#">Risk</a></li>
               </ul>
-            </nav><a class="btn btn-secondary">Connect Wallet</a>
+            </nav>
+            <div class="connect-holder js-open-close"><a class="btn btn-secondary js-opener"><span class="gradient-text">Connect Wallet</span></a>
+              <div class="connect-holder__drop">
+                <h2>Connect Wallet</h2>
+                <ul class="connect-holder__list"> 
+                  <li><a href="#"><span>MetaMask</span><img src="images/logo-1.png" alt=""></a></li>
+                  <li><a href="#"><span>Wallet Connect</span><img src="images/logo-2.png" alt=""></a></li>
+                  <li><a href="#"><span>Coinbase Wallet</span><img src="images/logo-3.png" alt=""></a></li>
+                </ul>
+                <p class="description">Don’t have a wallet? <a href="#">Get a wallet!</a></p><a class="js-close" href="#"> <img src="images/icons/icon-close.svg" alt=""></a>
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -40,7 +51,15 @@
             <h1>Wihtdraw</h1>
           </div>
           <div class="tab js-tab">
-            <h1>Risk</h1>
+            <p>Providing liquidity to Saddle is highly risky. Before using the protocol, we highly recommend reading the code and understanding the risks involved with being a Liquidity Provider (LP) and/or using the AMM to trade pegged value crypto assets.</p>
+            <h2>Audits</h2>
+            <p>The Saddle smart contracts were audited by OpenZeppelin, Quantstamp, and Certik.</p>
+            <p>Please keep in mind that security audits don’t completely eliminate risks. Do not supply assets that you cannot afford to lose to Saddle as a liquidity provider.</p>
+            <p>Using Saddle as an exchange user should be significantly less risky, but keep in mind there are still risks.</p>
+            <h2>Admin keys</h2>
+            <p>Saddle's admin keys are controlled by a 3/5 Gnosis Safe multisig. The signers are Mariano Conti, Kain Warwick, DegenSpartan, Klim K, and Damir Bandalo. This multisig has capabilities to pause new deposits and trades in case of technical emergencies. Users will always be able to withdraw their funds regardless of new deposits being paused. The multisig can also change the swap/withdrawal fees and the per pool/account deposit limits.</p>
+            <h2>Permanent loss of a peg</h2>
+            <p>If one of the assets in a pool significantly depegs, it will effectively mean that pool liquidity providers will be left holding only that asset.</p>
           </div>
         </div>
       </main>

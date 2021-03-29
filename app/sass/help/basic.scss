@@ -64,21 +64,38 @@ video {
 	box-sizing: border-box;
 }
 
+html {
+	font-size: 10px;
+}
+
 body {
 	font-family: $base-font-family;
+	color: $white;
+	font-size: 1.6rem;
+
+	&.mobile-nav-active {
+		overflow: hidden;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 a {
 	text-decoration: none;
-	display: inline-block;
 	cursor: pointer;
-	transition: all .3s ease-in-out;
-}
+	display: inline-block;
+	transition: color .3s ease-in-out, opacity .3s ease-in-out;
+	color: $blue;
 
-a:hover,
-a:active,
-a:focus {
-	text-decoration: none;
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+		color: $white;
+	}
 }
 
 input {
@@ -171,4 +188,59 @@ select {
 .scroll-wrap::-webkit-scrollbar-thumb {
 	background-color: rgba(0, 0, 0, 0.75);
 	border-radius: 2px;
+}
+
+.btn {
+	background: linear-gradient(131.89deg, #10BBEB 34.45%, #00FFE0 125.88%);
+	box-shadow: 0 4px 20px #126594;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 240px;
+	font-weight: 800;
+	padding: 17px;
+	color: $white;
+	transition: $base-transition;
+
+	@media (min-width: 900px) {
+		font-size: 2.2rem;
+	}
+
+	&:hover {
+		background: linear-gradient(131.89deg, #5B5A99 0%, #5B5A99 100%);
+		box-shadow: 0 2px 5px #126594;
+		color: $blue-24;
+	}
+
+	&-secondary {
+		background: linear-gradient(136.67deg, #FF7A00 8.34%, #FF00A8 95.26%);
+		box-shadow: 0 4px 31px #B5002B;
+		font-size: 1.6rem;
+		min-width: 210px;
+		padding: 13px;
+
+		&:hover {
+			background: #000;
+			box-shadow: 0 0 0 #B5002B;
+
+			.gradient-text {
+				background: linear-gradient(136.67deg, #FF7A00 8.34%, #FF00A8 95.26%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+}
+
+.description {
+	a {
+		color: $green;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+			opacity: 0.6;
+		}
+	}
 }
