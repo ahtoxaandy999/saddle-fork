@@ -1,0 +1,12 @@
+include bem
+
+doctype html
+html(lang='ru')
+	include head
+	body(class=pageClass)
+		.wrapper
+			block header
+			block content
+			block footer
+		script(src='js/libs/libs.min.js')
+		script(src='js/app.js')

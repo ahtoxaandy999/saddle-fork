@@ -1,0 +1,121 @@
+.header {
+    position: relative;
+
+    &__logo {
+        img {
+            width: 140px;
+        }
+    }
+
+    .container {
+        @media (min-width: 900px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+.nav-holder {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, left 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px 15px;
+    text-align: center;
+
+    @media (min-width: 900px) {
+        position: static;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        text-align-last: left;
+        padding: 0;
+    }
+
+    .mobile-nav-active & {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.nav {
+    &__list {
+        @media (min-width: 900px) {
+            display: flex;
+        }
+
+        li {
+            margin-bottom: 15px;
+
+            @media (min-width: 900px) {
+                margin-bottom: 0;
+                margin-right: 20px;
+            }
+        }
+
+        a {
+            &.active {
+                color: $white;
+            }
+        }
+    }
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    z-index: 11;
+    margin-left: auto;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+    @media (min-width: 900px) {
+        display: none;
+    }
+
+    .mobile-nav-active & {
+        span {
+            &:nth-child(1) {
+                top: 8px;
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                transform: translateX(2000px);
+            }
+
+            &:nth-child(3) {
+                bottom: 8px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    span {
+        width: 24px;
+        height: 3px;
+        border-radius: 100px;
+        position: relative;
+        transition: $base-transition;
+        background-color: $white;
+
+        &:nth-child(1) {
+            margin-bottom: 5px;
+        }
+
+        &:nth-child(3) {
+            margin-top: 5px;
+        }
+    }
+}

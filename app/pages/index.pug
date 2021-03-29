@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block head
+	- var pageTitle = 'Saddle Fork';
+
+block header
+	include ../blocks/header/header
+
+block content
+	main.main
+		.container
+			include ../blocks/tabs/tab-swap
+			include ../blocks/tabs/tab-deposit
+			include ../blocks/tabs/tab-withdraw
+			include ../blocks/tabs/tab-risk

@@ -1,0 +1,174 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+em,
+img,
+strong,
+sub,
+sup,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+* {
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $base-font-family;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+}
+
+a:hover,
+a:active,
+a:focus {
+	text-decoration: none;
+}
+
+input {
+	border: none;
+	background-color: transparent;
+	outline: none;
+	-webkit-appearance: none;
+	color: #8a8987;
+
+	&::placeholder {}
+
+	&:focus {
+		&::placeholder {}
+	}
+}
+
+textarea {
+	resize: vertical;
+	border: none;
+	background-color: transparent;
+	outline: none;
+	-webkit-appearance: none;
+
+	&::placeholder {}
+
+	&:focus {
+
+		&::placeholder {}
+	}
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
+	outline: none;
+	-webkit-appearance: none;
+}
+
+select {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
+	outline: none;
+	-webkit-appearance: none;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	background-color: #201D47;
+	background-image: url('../images/pattern.svg');
+	background-position: 50% 50%;
+	background-size: cover;
+
+	@media screen and (max-width: 1024px) {}
+
+	@media screen and (max-width: 1500px) {}
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.main-title {
+
+	@media screen and (min-width: 768px) {}
+
+	@media screen and (min-width: 1024px) {}
+}
+
+.section-title {
+
+	@media screen and (max-width: 768px) {}
+}
+
+//scroll
+.scroll-wrap::-webkit-scrollbar {
+	width: 3px;
+	background-color: #ccc;
+}
+
+.scroll-wrap::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 2px;
+}
