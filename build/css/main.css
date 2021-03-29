@@ -264,6 +264,9 @@ body{
 body.mobile-nav-active{
     overflow:hidden; }
 
+body::-webkit-scrollbar{
+    display:none; }
+
 img{
   max-width:100%;
   height:auto; }
@@ -323,7 +326,7 @@ select{
   background-size:cover; }
 
 .container{
-  max-width:1200px;
+  max-width:1140px;
   width:100%;
   margin:0 auto;
   padding:0 15px; }
@@ -421,6 +424,9 @@ h4,
   font-weight:400;
   font-size:1.6rem;
   margin-bottom:0.5em; }
+
+p{
+  margin-bottom:2em; }
 
 .header{
   position:relative;
@@ -628,3 +634,11 @@ h4,
 
 .connect-holder .js-close:hover{
     opacity:0.5; }
+
+.tab-risk{
+  padding-top:50px; }
+
+@media (min-width: 900px){
+    .tab-risk{
+      padding-top:140px;
+      max-width:1024px; } }

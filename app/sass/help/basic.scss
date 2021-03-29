@@ -76,6 +76,10 @@ body {
 	&.mobile-nav-active {
 		overflow: hidden;
 	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 img {
@@ -161,7 +165,7 @@ select {
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1140px;
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 15px;
