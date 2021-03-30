@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   new OpenClose({
     holders: '.js-openclose-deposit',
-    hideOnClickOutside: false
+    hideOnClickOutside: false,
+    classToBody: 'deposit-active'
   });
 });
 
@@ -113,6 +114,7 @@ var OpenClose = /*#__PURE__*/function () {
     this.closeBtn = params.close;
     this.hideOnClickOutside = params.hideOnClickOutside;
     this.addClassOnEnd = params.addClassOnEnd;
+    this.classToBody = params.classToBody;
     this.activeClass = params.activeClass ? params.activeClass : 'active';
     this.finishClass = params.finishClass ? params.finishClass : 'finished';
     this.attachEvents();
@@ -135,11 +137,19 @@ var OpenClose = /*#__PURE__*/function () {
             if (_this3.addClassOnEnd) {
               _this3.removeFinishClass(currentEl);
             }
+
+            if (_this3.classToBody) {
+              document.querySelector('body').classList.remove(_this3.classToBody);
+            }
           } else {
             _this3.addClass(currentEl);
 
             if (_this3.addClassOnEnd) {
               _this3.addFinishClass(currentEl);
+            }
+
+            if (_this3.classToBody) {
+              document.querySelector('body').classList.add(_this3.classToBody);
             }
           }
 
@@ -187,8 +197,10 @@ var OpenClose = /*#__PURE__*/function () {
     value: function addFinishClass(e) {
       var _this4 = this;
 
-      setTimeout(function () {
-        e.classList.add(_this4.finishClass);
+      this.timeout = setTimeout(function () {
+        if (e.classList.contains(_this4.activeClass)) {
+          e.classList.add(_this4.finishClass);
+        }
       }, 300);
     }
   }, {

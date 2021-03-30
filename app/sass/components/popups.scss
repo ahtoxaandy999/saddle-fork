@@ -1,6 +1,29 @@
 .base-popup {
+    margin-bottom: 20px;
+
+    @media (min-width: 900px) {
+        margin-bottom: 0;
+    }
+
+    &.pending,
+    &.success,
+    &.fail {
+        text-align: center;
+    }
+
+    &.fail {
+        color: $red;
+    }
+
+    &.history {
+        .base-popup__drop {
+            max-width: 800px;
+        }
+    }
+
     &.active {
         .base-popup__drop {
+            z-index: 3;
             opacity: 1;
             top: 50%;
             left: 50%;
@@ -51,6 +74,113 @@
 
         &:hover {
             opacity: 0.5;
+        }
+    }
+
+    &__loading {
+        margin-bottom: 3rem;
+
+        img {
+            animation: load1 1.1s infinite linear;
+        }
+    }
+
+    &__img-holder {
+        margin-bottom: 3rem;
+    }
+
+    .description-status {
+        font-weight: 800;
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__info {
+        background: linear-gradient(131.89deg, #10BBEB 34.45%, #00FFE0 125.88%);
+        border-radius: 10px;
+        margin-bottom: 4rem;
+        padding: 1.5rem 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        &-logo {
+            width: 6.4rem;
+            height: 6.4rem;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 2rem;
+            flex-shrink: 0;
+        }
+
+        &-data {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            color: $white;
+            margin: 1rem 0;
+        }
+
+        strong {
+            font-size: 2rem;
+            margin-top: 5px;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+
+        @media (min-width: 900px) {
+            margin-right: 3rem;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &__address {
+        color: $white;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        background-color: rgba(91, 90, 153, 0.4);
+        padding: 1.2rem;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 3rem;
+
+        &-logo {
+            width: 3.4rem;
+            height: 3.4rem;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+.actions-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        color: $blue-77;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        img {
+            margin-right: 6px;
         }
     }
 }

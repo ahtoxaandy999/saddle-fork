@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     new OpenClose({
         holders: '.js-openclose-deposit',
-        hideOnClickOutside: false
+        hideOnClickOutside: false,
+        classToBody: 'deposit-active'
     });
 });
 
@@ -90,6 +91,7 @@ class OpenClose {
         this.closeBtn = params.close;
         this.hideOnClickOutside = params.hideOnClickOutside;
         this.addClassOnEnd = params.addClassOnEnd;
+        this.classToBody = params.classToBody;
         this.activeClass = params.activeClass ? params.activeClass : 'active';
         this.finishClass = params.finishClass ? params.finishClass : 'finished';
 
@@ -108,10 +110,16 @@ class OpenClose {
                     if (this.addClassOnEnd) {
                         this.removeFinishClass(currentEl)
                     }
+                    if (this.classToBody) {
+                        document.querySelector('body').classList.remove(this.classToBody);
+                    }
                 } else {
                     this.addClass(currentEl);
                     if (this.addClassOnEnd) {
                         this.addFinishClass(currentEl)
+                    }
+                    if (this.classToBody) {
+                        document.querySelector('body').classList.add(this.classToBody);
                     }
                 }
 
@@ -153,8 +161,10 @@ class OpenClose {
     }
 
     addFinishClass(e) {
-        setTimeout(() => {
-            e.classList.add(this.finishClass);
+        this.timeout = setTimeout(() => {
+            if (e.classList.contains(this.activeClass)) {
+                e.classList.add(this.finishClass);
+            }
         }, 300);
     }
 

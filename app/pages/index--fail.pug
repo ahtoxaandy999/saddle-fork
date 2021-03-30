@@ -1,0 +1,26 @@
+extends ../layouts/default
+block variables
+	- var pageClass = 'deposit-active';
+
+block head
+	- var pageTitle = 'Saddle Fork';
+
+block header
+	include ../blocks/header/header--fail
+
+block content
+	main.main
+		.container
+			include ../blocks/tabs/tab-swap
+			include ../blocks/tabs/tab-deposit
+			include ../blocks/tabs/tab-withdraw
+			include ../blocks/tabs/tab-risk
+			.base-popup.fail.active
+				.base-popup__drop
+					.base-popup__img-holder
+						img(src="images/icons/icon-reject.svg", alt="succfailess")
+					p.description-status Transactions Rejected
+					button.close-btn Close
+					a(href="#").js-close 
+						img(src="images/icons/icon-close.svg", alt="")
+					

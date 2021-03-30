@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
     <link href="css/main.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
+  <body class="deposit-active">
     <div class="wrapper">
       <header class="header js-mobile-nav">
         <div class="container"> <a class="header__logo" href="#"><img src="images/logo.svg" alt="Main logo"></a>
@@ -35,8 +35,8 @@
               </div>
             </div>
             <div class="operation-info"><span class="operation-info__value">4.3331 ETH</span>
-              <div class="operation-info__status">
-                <div class="operation-info__logo">  <img src="images/logo-1.png" alt="Logo"></div><span class="operation-info__id">0x99cc3...0604</span>
+              <div class="operation-info__status fail"><span>Fail</span>
+                <div class="operation-info__icon"><img src="images/icons/icon-close-white.svg" alt=""></div>
               </div>
             </div>
           </div>
@@ -330,6 +330,65 @@
             <p>Saddle's admin keys are controlled by a 3/5 Gnosis Safe multisig. The signers are Mariano Conti, Kain Warwick, DegenSpartan, Klim K, and Damir Bandalo. This multisig has capabilities to pause new deposits and trades in case of technical emergencies. Users will always be able to withdraw their funds regardless of new deposits being paused. The multisig can also change the swap/withdrawal fees and the per pool/account deposit limits.</p>
             <h2>Permanent loss of a peg</h2>
             <p>If one of the assets in a pool significantly depegs, it will effectively mean that pool liquidity providers will be left holding only that asset.</p>
+          </div>
+          <div class="base-popup history active">
+            <div class="base-popup__drop">
+              <h2>Order History</h2>
+              <div class="history-table">
+                <div class="thead">
+                  <div class="tr"> 
+                    <div class="td">Receive</div>
+                    <div class="td">Pay</div>
+                    <div class="td">Rate</div>
+                    <div class="td">Status</div>
+                  </div>
+                </div>
+                <div class="tbody"> 
+                  <div class="tr"> 
+                    <div class="td"><img src="images/logo-3.png" alt=""><strong>5,464.146 USDT</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong><span class="info">perDRC</span></div>
+                    <div class="td"><a href="#"><img src="images/icons/icon-link.svg" alt=""><strong>Filled</strong></a></div>
+                  </div>
+                  <div class="tr"> 
+                    <div class="td"><img src="images/logo-3.png" alt=""><strong>5,464.146 USDT</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong><span class="info">perDRC</span></div>
+                    <div class="td"><a href="#"><img src="images/icons/icon-link.svg" alt=""><strong>Filled</strong></a></div>
+                  </div>
+                  <div class="tr"> 
+                    <div class="td"><img src="images/logo-3.png" alt=""><strong>5,464.146 USDT</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong><span class="info">perDRC</span></div>
+                    <div class="td"><a href="#"><img src="images/icons/icon-link.svg" alt=""><strong>Filled</strong></a></div>
+                  </div>
+                  <div class="tr"> 
+                    <div class="td"><img src="images/logo-3.png" alt=""><strong>5,464.146 USDT</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong><span class="info">perDRC</span></div>
+                    <div class="td"><a href="#"><img src="images/icons/icon-link.svg" alt=""><strong>Filled</strong></a></div>
+                  </div>
+                  <div class="tr"> 
+                    <div class="td"><img src="images/logo-3.png" alt=""><strong>5,464.146 USDT</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong><span class="info">perDRC</span></div>
+                    <div class="td"><a href="#"><img src="images/icons/icon-link.svg" alt=""><strong>Filled</strong></a></div>
+                  </div>
+                  <div class="tr"> 
+                    <div class="td"><img src="images/logo-3.png" alt=""><strong>5,464.146 USDT</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong><span class="info">perDRC</span></div>
+                    <div class="td"><a href="#"><img src="images/icons/icon-link.svg" alt=""><strong>Filled</strong></a></div>
+                  </div>
+                  <div class="tr"> 
+                    <div class="td"><img src="images/logo-3.png" alt=""><strong>5,464.146 USDT</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong></div>
+                    <div class="td"> <strong>5,464.146 DRC</strong><span class="info">perDRC</span></div>
+                    <div class="td"><a href="#"><img src="images/icons/icon-link.svg" alt=""><strong>Filled</strong></a></div>
+                  </div>
+                </div>
+              </div><a class="js-close" href="#"> <img src="images/icons/icon-close.svg" alt=""></a>
+            </div>
           </div>
         </div>
       </main>

@@ -1,0 +1,26 @@
+extends ../layouts/default
+block variables
+	- var pageClass = 'deposit-active';
+
+block head
+	- var pageTitle = 'Saddle Fork';
+
+block header
+	include ../blocks/header/header--pending
+
+block content
+	main.main
+		.container
+			include ../blocks/tabs/tab-swap
+			include ../blocks/tabs/tab-deposit
+			include ../blocks/tabs/tab-withdraw
+			include ../blocks/tabs/tab-risk
+			.base-popup.pending.active
+				.base-popup__drop
+					.base-popup__loading
+						img(src="images/loading.png", alt="Pending")
+					p.description-status Please, sign transaction in your wallet
+					button.close-btn Close
+					a(href="#").js-close 
+						img(src="images/icons/icon-close.svg", alt="")
+					

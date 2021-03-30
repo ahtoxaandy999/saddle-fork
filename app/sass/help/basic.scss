@@ -180,3 +180,23 @@ select {
 		transform: translate(-50%, -50%);
 	}
 }
+
+@keyframes load1 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+@keyframes load2 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

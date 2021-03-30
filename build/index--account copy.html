@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
     <link href="css/main.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
+  <body class="deposit-active">
     <div class="wrapper">
       <header class="header js-mobile-nav">
         <div class="container"> <a class="header__logo" href="#"><img src="images/logo.svg" alt="Main logo"></a>
@@ -35,8 +35,8 @@
               </div>
             </div>
             <div class="operation-info"><span class="operation-info__value">4.3331 ETH</span>
-              <div class="operation-info__status">
-                <div class="operation-info__logo">  <img src="images/logo-1.png" alt="Logo"></div><span class="operation-info__id">0x99cc3...0604</span>
+              <div class="operation-info__status fail"><span>Fail</span>
+                <div class="operation-info__icon"><img src="images/icons/icon-close-white.svg" alt=""></div>
               </div>
             </div>
           </div>
@@ -330,6 +330,23 @@
             <p>Saddle's admin keys are controlled by a 3/5 Gnosis Safe multisig. The signers are Mariano Conti, Kain Warwick, DegenSpartan, Klim K, and Damir Bandalo. This multisig has capabilities to pause new deposits and trades in case of technical emergencies. Users will always be able to withdraw their funds regardless of new deposits being paused. The multisig can also change the swap/withdrawal fees and the per pool/account deposit limits.</p>
             <h2>Permanent loss of a peg</h2>
             <p>If one of the assets in a pool significantly depegs, it will effectively mean that pool liquidity providers will be left holding only that asset.</p>
+          </div>
+          <div class="base-popup fail active">
+            <div class="base-popup__drop">
+              <h2>Account</h2>
+              <div class="base-popup__info"> 
+                <div class="base-popup__info-logo"><img src="images/logo-4.png" alt=""></div>
+                <div class="base-popup__info-data"> 
+                  <div class="base-popup__col"> <span>Balance</span><strong>5.8900</strong></div>
+                  <div class="base-popup__col"> <span>Network</span><strong>Etherium</strong></div>
+                  <div class="base-popup__col"> <span>Wallet</span><strong>MetaMask</strong></div>
+                </div>
+              </div>
+              <div class="base-popup__address"> 
+                <div class="base-popup__address-logo"> <img src="images/logo-3.png" alt=""></div><span class="base-popup__address-value">0cvxu899000cvxu899000cvxu899000cvxu899</span>
+              </div>
+              <div class="actions-panel"> <a href="#"> <img src="images/icons/icon-copy.svg" alt=""><span>Copy Address</span></a><a href="#"> <img src="images/icons/icon-transactions.svg" alt=""><span>Transaction History</span></a><a href="#"> <img src="images/icons/icon-disconnect.svg" alt=""><span>Disconnect</span></a></div><a class="js-close" href="#"> <img src="images/icons/icon-close.svg" alt=""></a>
+            </div>
           </div>
         </div>
       </main>

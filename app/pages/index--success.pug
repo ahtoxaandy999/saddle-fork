@@ -1,0 +1,27 @@
+extends ../layouts/default
+block variables
+	- var pageClass = 'deposit-active';
+
+block head
+	- var pageTitle = 'Saddle Fork';
+
+block header
+	include ../blocks/header/header--success
+
+block content
+	main.main
+		.container
+			include ../blocks/tabs/tab-swap
+			include ../blocks/tabs/tab-deposit
+			include ../blocks/tabs/tab-withdraw
+			include ../blocks/tabs/tab-risk
+			.base-popup.success.active
+				.base-popup__drop
+					.base-popup__img-holder
+						img(src="images/icons/icon-submit.svg", alt="success")
+					p.description-status Transactions Submitted
+					a(href="#").view-link View in Etherscan
+					button.close-btn Close
+					a(href="#").js-close 
+						img(src="images/icons/icon-close.svg", alt="")
+					

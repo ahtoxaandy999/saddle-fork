@@ -66,3 +66,15 @@ a {
         text-decoration: none;
     }
 }
+
+.view-link {
+    color: $blue-0a;
+    text-decoration: underline;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    display: block;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
