@@ -1,0 +1,41 @@
+.contacts-list {
+    li {
+        margin-bottom: 20px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(91, 90, 153, 0.4);
+        padding: 5px 10px 5px 20px;
+        border-radius: 10px;
+        min-height: 58px;
+        border: 2px solid transparent;
+
+        &:hover {
+            color: $green;
+            border: 2px solid $green;
+            font-weight: 800;
+            background-color: transparent;
+        }
+    }
+
+    img {
+        max-height: 44px;
+    }
+}
+
+.info-list {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid $blue-5b;
+    margin-bottom: 3.5rem;
+
+    li {
+        margin-bottom: 3rem;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}

@@ -1,16 +1,44 @@
 .deposit {
-    max-width: 320px;
     margin: 0 auto;
+    padding-bottom: 50px;
+
+    @media (min-width: 600px) {
+        max-width: 420px;
+        margin-bottom: 100px;
+    }
+
+    &.active {
+        .deposit__wrap {
+            display: none;
+        }
+
+        .deposit__drop {
+            display: flex;
+        }
+    }
+
     &__wrap {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 50px;
+
+        @media (min-width: 900px) {
+            padding-top: 120px;
+        }
     }
+
     &__title {
         font-weight: 800;
-        font-size: 22px;
+        font-size: 2.2rem;
         line-height: 1.2;
         color: $white;
         text-align: center;
+    }
+
+    &__drop {
+        display: none;
+        flex-direction: column;
+        align-items: center;
     }
 }

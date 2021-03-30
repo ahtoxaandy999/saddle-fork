@@ -3,7 +3,20 @@
 document.addEventListener("DOMContentLoaded", function () {
     mobileBurgerMenu('.js-burger-opener', '.js-mobile-nav');
     new Tabs('.js-tab-nav', '.js-tab');
-    new OpenClose('.js-open-close', '.js-opener', '.js-close', true);
+    new OpenClose({
+        holders: '.js-open-close',
+        close: '.js-close',
+        hideOnClickOutside: true
+    });
+    new OpenClose({
+        holders: '.js-advanced-openclose',
+        hideOnClickOutside: false,
+        addClassOnEnd: true
+    });
+    new OpenClose({
+        holders: '.js-openclose-deposit',
+        hideOnClickOutside: false
+    });
 });
 
 function mobileBurgerMenu(openerSelector, holderSelector, activeClass = 'mobile-nav-active') {
@@ -69,14 +82,16 @@ class Tabs {
 }
 
 class OpenClose {
-    constructor(holders, opener, closeBtn, hideOnClickOutside, focus = false) {
-        if (!document.querySelectorAll(holders)) return;
+    constructor(params) {
+        if (!document.querySelectorAll(params.holders)) return;
 
-        this.holders = document.querySelectorAll(holders);
-        this.opener = opener;
-        this.closeBtn = closeBtn;
-        this.hideOnClickOutside = hideOnClickOutside;
-        this.focus = focus;
+        this.holders = document.querySelectorAll(params.holders);
+        this.opener = params.opener ? params.opener : '.js-opener';
+        this.closeBtn = params.close;
+        this.hideOnClickOutside = params.hideOnClickOutside;
+        this.addClassOnEnd = params.addClassOnEnd;
+        this.activeClass = params.activeClass ? params.activeClass : 'active';
+        this.finishClass = params.finishClass ? params.finishClass : 'finished';
 
         this.attachEvents();
     }
@@ -88,23 +103,22 @@ class OpenClose {
                 e.stopPropagation();
                 e.preventDefault();
 
-                if (currentEl.classList.contains('active')) {
+                if (currentEl.classList.contains(this.activeClass)) {
                     this.removeClass(currentEl);
+                    if (this.addClassOnEnd) {
+                        this.removeFinishClass(currentEl)
+                    }
                 } else {
                     this.addClass(currentEl);
-                    if (this.focus !== false) {
-                        let elToFocus = currentEl.querySelector(this.focus);
-
-                        if (elToFocus != null) {
-                            elToFocus.focus();
-                        }
+                    if (this.addClassOnEnd) {
+                        this.addFinishClass(currentEl)
                     }
                 }
 
                 if (this.hideOnClickOutside) {
                     //hide other drop if open
                     this.holders.forEach((item) => {
-                        if (item.classList.contains('active') && item !== currentEl) {
+                        if (item.classList.contains(this.activeClass) && item !== currentEl) {
                             this.removeClass(item);
                         }
                     });
@@ -131,10 +145,20 @@ class OpenClose {
     }
 
     addClass(e) {
-        e.classList.add('active');
+        e.classList.add(this.activeClass);
     }
 
     removeClass(e) {
-        e.classList.remove('active');
+        e.classList.remove(this.activeClass);
+    }
+
+    addFinishClass(e) {
+        setTimeout(() => {
+            e.classList.add(this.finishClass);
+        }, 300);
+    }
+
+    removeFinishClass(e) {
+        e.classList.remove(this.finishClass);
     }
 }

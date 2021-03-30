@@ -9,7 +9,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 document.addEventListener("DOMContentLoaded", function () {
   mobileBurgerMenu('.js-burger-opener', '.js-mobile-nav');
   new Tabs('.js-tab-nav', '.js-tab');
-  new OpenClose('.js-open-close', '.js-opener', '.js-close', true);
+  new OpenClose({
+    holders: '.js-open-close',
+    close: '.js-close',
+    hideOnClickOutside: true
+  });
+  new OpenClose({
+    holders: '.js-advanced-openclose',
+    hideOnClickOutside: false,
+    addClassOnEnd: true
+  });
+  new OpenClose({
+    holders: '.js-openclose-deposit',
+    hideOnClickOutside: false
+  });
 });
 
 function mobileBurgerMenu(openerSelector, holderSelector) {
@@ -91,17 +104,17 @@ var Tabs = /*#__PURE__*/function () {
 }();
 
 var OpenClose = /*#__PURE__*/function () {
-  function OpenClose(holders, opener, closeBtn, hideOnClickOutside) {
-    var focus = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
-
+  function OpenClose(params) {
     _classCallCheck(this, OpenClose);
 
-    if (!document.querySelectorAll(holders)) return;
-    this.holders = document.querySelectorAll(holders);
-    this.opener = opener;
-    this.closeBtn = closeBtn;
-    this.hideOnClickOutside = hideOnClickOutside;
-    this.focus = focus;
+    if (!document.querySelectorAll(params.holders)) return;
+    this.holders = document.querySelectorAll(params.holders);
+    this.opener = params.opener ? params.opener : '.js-opener';
+    this.closeBtn = params.close;
+    this.hideOnClickOutside = params.hideOnClickOutside;
+    this.addClassOnEnd = params.addClassOnEnd;
+    this.activeClass = params.activeClass ? params.activeClass : 'active';
+    this.finishClass = params.finishClass ? params.finishClass : 'finished';
     this.attachEvents();
   }
 
@@ -116,24 +129,24 @@ var OpenClose = /*#__PURE__*/function () {
           e.stopPropagation();
           e.preventDefault();
 
-          if (currentEl.classList.contains('active')) {
+          if (currentEl.classList.contains(_this3.activeClass)) {
             _this3.removeClass(currentEl);
+
+            if (_this3.addClassOnEnd) {
+              _this3.removeFinishClass(currentEl);
+            }
           } else {
             _this3.addClass(currentEl);
 
-            if (_this3.focus !== false) {
-              var elToFocus = currentEl.querySelector(_this3.focus);
-
-              if (elToFocus != null) {
-                elToFocus.focus();
-              }
+            if (_this3.addClassOnEnd) {
+              _this3.addFinishClass(currentEl);
             }
           }
 
           if (_this3.hideOnClickOutside) {
             //hide other drop if open
             _this3.holders.forEach(function (item) {
-              if (item.classList.contains('active') && item !== currentEl) {
+              if (item.classList.contains(_this3.activeClass) && item !== currentEl) {
                 _this3.removeClass(item);
               }
             });
@@ -162,12 +175,26 @@ var OpenClose = /*#__PURE__*/function () {
   }, {
     key: "addClass",
     value: function addClass(e) {
-      e.classList.add('active');
+      e.classList.add(this.activeClass);
     }
   }, {
     key: "removeClass",
     value: function removeClass(e) {
-      e.classList.remove('active');
+      e.classList.remove(this.activeClass);
+    }
+  }, {
+    key: "addFinishClass",
+    value: function addFinishClass(e) {
+      var _this4 = this;
+
+      setTimeout(function () {
+        e.classList.add(_this4.finishClass);
+      }, 300);
+    }
+  }, {
+    key: "removeFinishClass",
+    value: function removeFinishClass(e) {
+      e.classList.remove(this.finishClass);
     }
   }]);
 

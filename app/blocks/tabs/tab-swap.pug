@@ -1,3 +1,140 @@
 .tab.js-tab.active
     .tab__content
-        h1 Swap
+        .intro-section.change-icon
+            .intro-section__col
+                .card
+                    h2.main-title From
+                    form(action="#").main-form
+                        .main-form__row 
+                            input(type="number" name="form-input1" id="form-input1" value="0.0" min="0.0" step="0.1").form-input
+                            button.form-btn MAX
+                        .main-form__currency-holder
+                            input(type="radio" name="currency" id="currency1" value="currency1" checked).currency-checkbox
+                            label.currency-info(for="currency1") 
+                                .currency-info__name
+                                    img(src="images/icons/icon-eth.svg", alt="Name")
+                                    span tBTC
+                                .currency-info__value
+                                    span 0.0
+                            input(type="radio" name="currency" id="currency2" value="currency2").currency-checkbox
+                            label.currency-info(for="currency2") 
+                                .currency-info__name
+                                    img(src="images/icons/icon-eth.svg", alt="Name")
+                                    span tBTC
+                                .currency-info__value
+                                    span 0.0
+                            input(type="radio" name="currency" id="currency3" value="currency3").currency-checkbox
+                            label.currency-info(for="currency3") 
+                                .currency-info__name
+                                    img(src="images/icons/icon-eth.svg", alt="Name")
+                                    span tBTC
+                                .currency-info__value
+                                    span 0.0
+                            input(type="radio" name="currency" id="currency4" value="currency4").currency-checkbox
+                            label.currency-info(for="currency4") 
+                                .currency-info__name
+                                    img(src="images/icons/icon-eth.svg", alt="Name")
+                                    span tBTC
+                                .currency-info__value
+                                    span 0.0
+            .intro-section__col
+                .card
+                    h2.main-title To
+                    form(action="#").main-form
+                        .main-form__row 
+                            input(type="number" name="form-input2" id="form-input2" value="0.0" min="0.0" step="0.1" disabled).form-input
+                        .main-form__currency-holder
+                            input(type="radio" name="currency" id="currencyOut1" value="currencyOut1" checked).currency-checkbox
+                            label.currency-info(for="currencyOut1") 
+                                .currency-info__name
+                                    img(src="images/icons/icon-eth.svg", alt="Name")
+                                    span tBTC
+                                .currency-info__value
+                                    span 0.0
+                            input(type="radio" name="currency" id="currencyOut2" value="currencyOut2").currency-checkbox
+                            label.currency-info(for="currencyOut2") 
+                                .currency-info__name
+                                    img(src="images/icons/icon-eth.svg", alt="Name")
+                                    span tBTC
+                                .currency-info__value
+                                    span 0.0
+                            input(type="radio" name="currency" id="currencyOut3" value="currencyOut3").currency-checkbox
+                            label.currency-info(for="currencyOut3") 
+                                .currency-info__name
+                                    img(src="images/icons/icon-eth.svg", alt="Name")
+                                    span tBTC
+                                .currency-info__value
+                                    span 0.0
+                            input(type="radio" name="currency" id="currencyOut4" value="currencyOut4").currency-checkbox
+                            label.currency-info(for="currencyOut4") 
+                                .currency-info__name
+                                    img(src="images/icons/icon-eth.svg", alt="Name")
+                                    span tBTC
+                                .currency-info__value
+                                    span 0.0
+        .advanced-options.js-advanced-openclose
+            .advanced-options__head
+                .advanced-options__head-wrap
+                    span.advanced-options__title Price TBTC/WBTC
+                    a(href="#").refresh-btn
+                        img(src="images/icons/icon-refresh.svg", alt="Refresh")
+                    span.advanced-options__value 0.0
+                a(href="#").js-opener.advanced-options__opener Advanced Options
+            .advanced-options__drop
+                .advanced-options__drop-wrap
+                    form(action="#").secondary-form 
+                    .secondary-form__row
+                        .approval-tooltip.js-open-close
+                            input(type="checkbox" name="approval" id="approval")
+                            a(href="#").approval-tooltip-opener.js-opener Infinite Approval
+                            .approval-tooltip-drop 
+                                p Allow Saddle to spend all of the selected tokens now and in the future. You will not need to approve again.
+                    .secondary-form__row
+                        span.secondary-form__title Max Slippage:
+                        .form-control 
+                            input(type="radio" name="slippage" id="slippage1" value="slippage1" checked).radio
+                            label.label(for="slippage1") 
+                                span 0.1%
+                        .form-control 
+                            input(type="radio" name="slippage" id="slippage2" value="slippage2").radio
+                            label.label(for="slippage2") 
+                                span 1%
+                        .form-control 
+                            input(type="radio" disabled).radio
+                            label.label 
+                                span %
+                    .secondary-form__row
+                        span.secondary-form__title Transaction Deadline:
+                        .form-control 
+                            input(type="radio" name="deadline" id="deadline1" value="deadline1" checked).radio
+                            label.label(for="deadline1") 
+                                span 10 min
+                        .form-control 
+                            input(type="radio" name="deadline" id="deadline2" value="deadline2").radio
+                            label.label(for="deadline2") 
+                                span 30 min
+                        .form-control 
+                            input(type="radio" disabled).radio
+                            label.label 
+                                span min
+                    .secondary-form__row
+                        span.secondary-form__title Gas:
+                        .form-control 
+                            input(type="radio" name="gas" id="gas1" value="gas1").radio
+                            label.label.lg(for="gas1") 
+                                span 182<br> Standart
+                        .form-control 
+                            input(type="radio" name="gas" id="gas2" value="gas2").radio
+                            label.label.lg(for="gas2") 
+                                span 199<br> Fast
+                        .form-control 
+                            input(type="radio" name="gas" id="gas3" value="gas3" checked).radio
+                            label.label.lg(for="gas3") 
+                                span 214<br> Instant
+                        .form-control 
+                            input(type="radio" disabled).radio
+                            label.label.lg
+                                span Gas
+            .advanced-options__btn-holder
+                a.btn Swap
+                

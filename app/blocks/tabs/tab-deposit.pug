@@ -1,2 +1,99 @@
 .tab.js-tab
-    h1 Deposit
+    .tab__content
+        .intro-section
+            .intro-section__col
+                .card
+                    h2.main-title.lg-space Add Liquidity
+                    form(action="#").main-form
+                        .main-form__row.has-icon 
+                            .icon-holder 
+                                img(src="images/icons/icon-eth.svg", alt="Name")
+                                span tBTC
+                            input(type="number" name="form-input01" id="form-input01" value="0.0" min="0.0" step="0.1").form-input
+                            button.form-btn MAX
+                        .main-form__row.has-icon 
+                            .icon-holder 
+                                img(src="images/icons/icon-eth.svg", alt="Name")
+                                span tBTC
+                            input(type="number" name="form-input02" id="form-input02" value="0.0" min="0.0" step="0.1").form-input
+                            button.form-btn MAX
+                        .main-form__row.has-icon 
+                            .icon-holder 
+                                img(src="images/icons/icon-eth.svg", alt="Name")
+                                span tBTC
+                            input(type="number" name="form-input03" id="form-input03" value="0.0" min="0.0" step="0.1").form-input
+                            button.form-btn MAX
+                        .main-form__row.has-icon 
+                            .icon-holder 
+                                img(src="images/icons/icon-eth.svg", alt="Name")
+                                span tBTC
+                            input(type="number" name="form-input04" id="form-input04" value="0.0" min="0.0" step="0.1").form-input
+                            button.form-btn MAX
+                    .card__bonus
+                        span BONUS:
+                            strong 0.0%
+            .intro-section__col
+                .info-card
+                    ul.info-list 
+                        li 
+                            p Fee:
+                                strong
+                        li 
+                            p Virtual price:
+                                strong 
+                        li 
+                            p Total locked:
+                                strong 0% 
+                        li 
+                            p Admin fee:
+                                strong 
+                    h2 Currency reserves
+                    strong 0% in total
+
+        .advanced-options.js-advanced-openclose
+            .advanced-options__head
+                a(href="#").js-opener.advanced-options__opener Advanced Options
+            .advanced-options__drop
+                .advanced-options__drop-wrap
+                    form(action="#").secondary-form 
+                    .secondary-form__row
+                        .approval-tooltip.js-open-close
+                            input(type="checkbox" name="approval" id="approval")
+                            a(href="#").approval-tooltip-opener.js-opener Infinite Approval
+                            .approval-tooltip-drop 
+                                p Allow Saddle to spend all of the selected tokens now and in the future. You will not need to approve again.
+                    .secondary-form__row
+                        span.secondary-form__title Max Slippage:
+                        .form-control 
+                            input(type="radio" name="slippage0" id="slippage01" value="slippage01" checked).radio
+                            label.label(for="slippage01") 
+                                span 0.1%
+                        .form-control 
+                            input(type="radio" name="slippage0" id="slippage02" value="slippage02").radio
+                            label.label(for="slippage02") 
+                                span 1%
+                        .form-control 
+                            input(type="radio" disabled).radio
+                            label.label 
+                                span %
+                    .secondary-form__row
+                        span.secondary-form__title Gas:
+                        .form-control 
+                            input(type="radio" name="gas0" id="gas01" value="gas01").radio
+                            label.label.lg(for="gas01") 
+                                span 182<br> Standart
+                        .form-control 
+                            input(type="radio" name="gas0" id="gas02" value="gas02").radio
+                            label.label.lg(for="gas02") 
+                                span 199<br> Fast
+                        .form-control 
+                            input(type="radio" name="gas0" id="gas03" value="gas03" checked).radio
+                            label.label.lg(for="gas03") 
+                                span 214<br> Instant
+                        .form-control 
+                            input(type="radio" disabled).radio
+                            label.label.lg
+                                span Gas
+            .advanced-options__btn-holder
+                a.btn Swap
+                

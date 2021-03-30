@@ -71,7 +71,11 @@ html {
 body {
 	font-family: $base-font-family;
 	color: $white;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
+
+	@media (min-width: 900px) {
+		font-size: 1.6rem;
+	}
 
 	&.mobile-nav-active {
 		overflow: hidden;
@@ -85,21 +89,6 @@ body {
 img {
 	max-width: 100%;
 	height: auto;
-}
-
-a {
-	text-decoration: none;
-	cursor: pointer;
-	display: inline-block;
-	transition: color .3s ease-in-out, opacity .3s ease-in-out;
-	color: $blue;
-
-	&:hover,
-	&:active,
-	&:focus {
-		text-decoration: none;
-		color: $white;
-	}
 }
 
 input {
@@ -135,7 +124,7 @@ button {
 	cursor: pointer;
 	border: none;
 	background-color: transparent;
-	transition: all 0.3s ease-in-out;
+	transition: all .2s ease-in-out;
 	outline: none;
 	-webkit-appearance: none;
 }
@@ -144,7 +133,7 @@ select {
 	cursor: pointer;
 	border: none;
 	background-color: transparent;
-	transition: all 0.3s ease-in-out;
+	transition: all .2s ease-in-out;
 	outline: none;
 	-webkit-appearance: none;
 }
@@ -156,12 +145,8 @@ select {
 	overflow: hidden;
 	background-color: #201D47;
 	background-image: url('../images/pattern.svg');
-	background-position: 50% 50%;
-	background-size: cover;
-
-	@media screen and (max-width: 1024px) {}
-
-	@media screen and (max-width: 1500px) {}
+	background-position: 50% 0;
+	background-size: 100% auto;
 }
 
 .container {
@@ -169,18 +154,6 @@ select {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 15px;
-}
-
-.main-title {
-
-	@media screen and (min-width: 768px) {}
-
-	@media screen and (min-width: 1024px) {}
-}
-
-.section-title {
-
-	@media screen and (max-width: 768px) {}
 }
 
 //scroll
@@ -194,57 +167,16 @@ select {
 	border-radius: 2px;
 }
 
-.btn {
-	background: linear-gradient(131.89deg, #10BBEB 34.45%, #00FFE0 125.88%);
-	box-shadow: 0 4px 20px #126594;
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-width: 240px;
-	font-weight: 800;
-	padding: 17px;
-	color: $white;
-	transition: $base-transition;
+.border-gradient {
+	position: relative;
 
-	@media (min-width: 900px) {
-		font-size: 2.2rem;
-	}
-
-	&:hover {
-		background: linear-gradient(131.89deg, #5B5A99 0%, #5B5A99 100%);
-		box-shadow: 0 2px 5px #126594;
-		color: $blue-24;
-	}
-
-	&-secondary {
-		background: linear-gradient(136.67deg, #FF7A00 8.34%, #FF00A8 95.26%);
-		box-shadow: 0 4px 31px #B5002B;
-		font-size: 1.6rem;
-		min-width: 210px;
-		padding: 13px;
-
-		&:hover {
-			background: #000;
-			box-shadow: 0 0 0 #B5002B;
-
-			.gradient-text {
-				background: linear-gradient(136.67deg, #FF7A00 8.34%, #FF00A8 95.26%);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-		}
-	}
-}
-
-.description {
-	a {
-		color: $green;
-		text-decoration: underline;
-
-		&:hover {
-			text-decoration: none;
-			opacity: 0.6;
-		}
+	&::before {
+		content: '';
+		width: calc(100% + 2px);
+		height: calc(100% + 2px);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }

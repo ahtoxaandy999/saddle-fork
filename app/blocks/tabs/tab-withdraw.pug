@@ -1,14 +1,40 @@
 .tab.js-tab
-    .deposit
+    .deposit.js-openclose-deposit
         .deposit__wrap 
             .deposit__img 
                 img(src="images/withdraw-2.png", alt="")
             p.deposit__title You don’t have any funds to withdraw.
             p.deposit__text Deposit first to get started!
-            button(type="button").btn.btn-primary Deposit
-    .deposit
-        .deposit__wrap 
+            button(type="button").btn.btn-primary.js-opener Deposit
+        .deposit__drop
             .deposit__img 
                 img(src="images/withdraw-1.png", alt="")
             p.deposit__title Choose to withdraw:
+            form(action="#").main-form.small
+                .currency-info.active
+                    .currency-info__name
+                        img(src="images/icons/icon-eth.svg", alt="Name")
+                        span tBTC
+                    .currency-info__wrap
+                        input(type="number" name="form-input11" id="form-input11" value="0.0" min="0.0" step="0.1").form-input
+                        button.form-btn MAX
+                .currency-info
+                    .currency-info__name
+                        img(src="images/icons/icon-eth.svg", alt="Name")
+                        span tBTC
+                    .currency-info__value
+                        span 0.0
+                .currency-info
+                    .currency-info__name
+                        img(src="images/icons/icon-eth.svg", alt="Name")
+                        span tBTC
+                    .currency-info__value
+                        span 0.0
+                .currency-info
+                    .currency-info__name
+                        img(src="images/icons/icon-eth.svg", alt="Name")
+                        span tBTC
+                    .currency-info__value
+                    span 0.0
             button(type="button").btn.btn-secondary Withdraw 
+            
