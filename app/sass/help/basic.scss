@@ -84,6 +84,11 @@ body {
 	&::-webkit-scrollbar {
 		display: none;
 	}
+
+	&.popup-active {
+		overflow: hidden;
+		height: 100%;
+	}
 }
 
 img {

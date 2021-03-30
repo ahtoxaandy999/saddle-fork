@@ -271,6 +271,10 @@ body.mobile-nav-active{
 body::-webkit-scrollbar{
     display:none; }
 
+body.popup-active{
+    overflow:hidden;
+    height:100%; }
+
 img{
   max-width:100%;
   height:auto; }
