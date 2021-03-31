@@ -16,7 +16,7 @@
 
     &:hover {
         background: linear-gradient(131.89deg, #5B5A99 0%, #5B5A99 100%);
-        box-shadow: 0 2px 5px #126594;
+        box-shadow: 0 0 0 #126594;
         color: $blue-24;
     }
 
@@ -25,6 +25,7 @@
         box-shadow: 0 4px 31px #B5002B;
         min-width: 210px;
         padding: 13px;
+        position: relative;
 
         &:hover {
             background: $black;
@@ -35,6 +36,25 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
+
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(136.67deg, #FF7A00 8.34%, #FF00A8 95.26%);
+            z-index: -1;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
         }
     }
 

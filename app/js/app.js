@@ -10,8 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     new OpenClose({
         holders: '.js-advanced-openclose',
-        hideOnClickOutside: false,
-        addClassOnEnd: true
+        hideOnClickOutside: false
     });
     new OpenClose({
         holders: '.js-openclose-deposit',
@@ -84,16 +83,16 @@ class Tabs {
 
 class OpenClose {
     constructor(params) {
-        if (!document.querySelectorAll(params.holders)) return;
+        if (!document.querySelector(params.holders)) return;
+        console.log(params);
 
         this.holders = document.querySelectorAll(params.holders);
-        this.opener = params.opener ? params.opener : '.js-opener';
+        this.opener = params.opener || '.js-opener';
         this.closeBtn = params.close;
         this.hideOnClickOutside = params.hideOnClickOutside;
-        this.addClassOnEnd = params.addClassOnEnd;
         this.classToBody = params.classToBody;
-        this.activeClass = params.activeClass ? params.activeClass : 'active';
-        this.finishClass = params.finishClass ? params.finishClass : 'finished';
+        this.activeClass = params.activeClass || 'active';
+        this.finishClass = params.finishClass || 'finished';
 
         this.attachEvents();
     }
@@ -107,7 +106,7 @@ class OpenClose {
 
                 if (currentEl.classList.contains(this.activeClass)) {
                     this.removeClass(currentEl);
-                    if (this.addClassOnEnd) {
+                    if (this.finishClass) {
                         this.removeFinishClass(currentEl)
                     }
                     if (this.classToBody) {
@@ -115,7 +114,7 @@ class OpenClose {
                     }
                 } else {
                     this.addClass(currentEl);
-                    if (this.addClassOnEnd) {
+                    if (this.finishClass) {
                         this.addFinishClass(currentEl)
                     }
                     if (this.classToBody) {
