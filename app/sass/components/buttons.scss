@@ -90,3 +90,20 @@
         opacity: 0.6;
     }
 }
+
+.change-btn {
+    content: url('../images/icons/icon-change.svg');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+
+    @media (min-width: 768px) {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+        opacity: 0.6;
+    }
+}

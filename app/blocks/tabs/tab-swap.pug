@@ -1,6 +1,7 @@
 .tab.js-tab
     .tab__content
-        .intro-section.change-icon
+        .intro-section
+            a(href="#").change-btn
             .intro-section__col
                 .card
                     h2.main-title From
@@ -42,7 +43,7 @@
                     h2.main-title To
                     form(action="#").main-form
                         .main-form__row 
-                            input(type="number" name="form-input2" id="form-input2" value="0.0" min="0.0" step="0.1" disabled).form-input
+                            input(type="number" name="form-input2" id="form-input2" value="0.0" min="0.0" step="0.1").form-input
                         .main-form__currency-holder
                             input(type="radio" name="currency" id="currencyOut1" value="currencyOut1" checked).currency-checkbox
                             label.currency-info(for="currencyOut1") 
@@ -100,9 +101,7 @@
                             label.label(for="slippage2") 
                                 span 1%
                         .form-control 
-                            input(type="radio" disabled).radio
-                            label.label 
-                                span %
+                            input(type="text" value="%").text
                     .secondary-form__row
                         span.secondary-form__title Transaction Deadline:
                         .form-control 
@@ -114,9 +113,7 @@
                             label.label(for="deadline2") 
                                 span 30 min
                         .form-control 
-                            input(type="radio" disabled).radio
-                            label.label 
-                                span min
+                            input(type="text" value="min").text
                     .secondary-form__row
                         span.secondary-form__title Gas:
                         .form-control 
@@ -132,9 +129,7 @@
                             label.label.lg(for="gas3") 
                                 span 214<br> Instant
                         .form-control 
-                            input(type="radio" disabled).radio
-                            label.label.lg
-                                span Gas
+                            input(type="text" value="Gas").text.lg
             .advanced-options__btn-holder
                 a.btn Swap
                 

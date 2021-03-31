@@ -15,14 +15,14 @@
 
     &__row {
         display: flex;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
 
         @media (min-width: 900px) {
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
 
         &.has-icon {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
     }
 
@@ -74,12 +74,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     cursor: pointer;
     transition: background .2s ease-in-out;
 
     @media (min-width: 900px) {
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 
     &.active {
@@ -149,15 +149,11 @@
 }
 
 .form-control {
-    margin: 0 6px;
+    margin: 0 0.6rem 1.2rem;
     max-width: 30%;
 
     @media (min-width: 600px) {
         max-width: none;
-    }
-
-    @media (min-width: 900px) {
-        margin: 0 10px;
     }
 
     .radio {
@@ -170,25 +166,10 @@
             color: $blue-0a;
             font-weight: 800;
         }
-
-        &:disabled+.label {
-            display: none;
-            background-color: $white;
-            border-color: transparent;
-            color: $black;
-            cursor: auto;
-
-            @media (min-width: 600px) {
-                display: flex;
-            }
-
-            &:hover {
-                opacity: 1;
-            }
-        }
     }
 
-    .label {
+    .label,
+    .text {
         background: rgba(91, 90, 153, 0.2);
         border-radius: 6px;
         border: 2px solid transparent;
@@ -214,6 +195,18 @@
             border-color: $blue-0a;
             background: rgba(91, 90, 153, 0);
             color: $blue-0a;
+        }
+    }
+
+    .text {
+        background-color: $white;
+        border-color: transparent;
+        color: $black;
+        width: 80px;
+
+        &:hover {
+            background: $white;
+            opacity: 0.8;
         }
     }
 }

@@ -1,45 +1,29 @@
 .tab {
     &-risk {
-        padding-top: 50px;
+        padding-top: 30px;
 
         @media (min-width: 900px) {
-            padding-top: 140px;
+            padding-top: 80px;
             max-width: 1024px;
         }
     }
 }
 
 .intro-section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    position: relative;
 
     @media (min-width: 768px) {
         display: flex;
-        margin: 0 -15px 40px;
+        margin: 0 -15px 20px;
     }
 
     @media (min-width: 1200px) {
-        margin: 0 -30px 60px;
-    }
-
-    &.change-icon {
-        position: relative;
-
-        &::before {
-            content: url('../images/icons/icon-change.svg');
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(90deg);
-
-            @media (min-width: 768px) {
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-        }
+        margin: 0 -30px 30px;
     }
 
     &__col {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
 
         @media (min-width: 768px) {
             margin-bottom: 0;
@@ -58,7 +42,7 @@
     font-size: 1.8rem;
 
     @media (min-width: 900px) {
-        padding: 25px 30px;
+        padding: 15px 20px;
     }
 
     &__bonus {
@@ -70,8 +54,8 @@
         padding: 15px;
 
         @media (min-width: 900px) {
-            margin: 0 -30px -25px;
-            padding: 35px;
+            margin: 0 -20px -20px;
+            padding: 25px;
         }
 
         strong {
@@ -191,5 +175,50 @@
 
     @media (min-width: 900px) {
         padding: 25px 30px 15px;
+    }
+}
+
+.deposit {
+    margin: 0 auto;
+    padding-bottom: 50px;
+
+    @media (min-width: 600px) {
+        max-width: 420px;
+        margin-bottom: 100px;
+    }
+
+    &.active {
+        .deposit__wrap {
+            display: none;
+        }
+
+        .deposit__drop {
+            display: flex;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+
+        @media (min-width: 900px) {
+            padding-top: 70px;
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 2.2rem;
+        line-height: 1.2;
+        color: $white;
+        text-align: center;
+    }
+
+    &__drop {
+        display: none;
+        flex-direction: column;
+        align-items: center;
     }
 }
