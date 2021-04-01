@@ -934,14 +934,15 @@ a:hover, a:active, a:focus{
 
 .btn:hover{
     background:linear-gradient(131.89deg, #5B5A99 0%, #5B5A99 100%);
-    box-shadow:0 2px 5px #126594;
+    box-shadow:0 0 0 #126594;
     color:#241C46; }
 
 .btn-secondary{
     background:linear-gradient(136.67deg, #FF7A00 8.34%, #FF00A8 95.26%);
     box-shadow:0 4px 31px #B5002B;
     min-width:210px;
-    padding:13px; }
+    padding:13px;
+    position:relative; }
 
 .btn-secondary:hover{
       background:#000;
@@ -951,6 +952,27 @@ a:hover, a:active, a:focus{
         background:linear-gradient(136.67deg, #FF7A00 8.34%, #FF00A8 95.26%);
         -webkit-background-clip:text;
         -webkit-text-fill-color:transparent; }
+
+.btn-secondary:hover::before{
+        opacity:1; }
+
+.btn-secondary::before{
+      content:'';
+      position:absolute;
+      top:50%;
+      left:50%;
+      -webkit-transform:translate(-50%, -50%);
+      -ms-transform:translate(-50%, -50%);
+      transform:translate(-50%, -50%);
+      width:calc(100% + 4px);
+      height:calc(100% + 4px);
+      background:-webkit-linear-gradient(313.33deg, #FF7A00 8.34%, #FF00A8 95.26%);
+      background:linear-gradient(136.67deg, #FF7A00 8.34%, #FF00A8 95.26%);
+      z-index:-1;
+      border-radius:10px;
+      opacity:0;
+      -webkit-transition:opacity 0.2s ease-in-out;
+      transition:opacity 0.2s ease-in-out; }
 
 .btn-withdraw{
     border:2px solid transparent; }
